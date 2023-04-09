@@ -164,23 +164,13 @@ def main(
 
 
 def generate_prompt(instruction, input=None):
-    if input:
-        return f"""Given a short text, generate a JSON array with two fields, chart and explanation. The array should have 1 to 3 items
-
+    return f"""
 ### Instruction:
-{instruction}
+Given a short text, generate a JSON array with two fields, chart and explanation. The array should have 1 to 3 items
 ### Input:
 {input}
 ### Response:
 """
-    else:
-        return f"""Given a short text, generate a JSON array with two fields, chart and explanation. The array should have 1 to 3 items
-
-### Instruction:
-{instruction}
-### Response:
-"""
-
 
 if __name__ == "__main__":
     fire.Fire(main)
